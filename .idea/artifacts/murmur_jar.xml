@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="murmur:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/murmur_jar</output-path>
+    <root id="archive" name="murmur.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="murmur" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.2.31/95d6a67e8787280a82a2059e54e4db7ac6cfe74/kotlin-stdlib-jdk7-1.2.31.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.31/153dcd9ed9db246a7e36f4d7609e2a9f4718c674/kotlin-stdlib-1.2.31.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.2.31/50094b02ec8a4c2e4444073c722bb56c8a52b83c/kotlin-stdlib-jdk8-1.2.31.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
