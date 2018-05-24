@@ -25,7 +25,7 @@ public class SceneConnect {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Text sceneTitle = new Text("Welcome to MurMur");
+        Text sceneTitle = new Text(" 有 間 茶 樓 ");
         sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(sceneTitle, 0, 0, 2, 1);
 

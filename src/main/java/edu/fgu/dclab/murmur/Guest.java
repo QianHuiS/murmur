@@ -11,9 +11,16 @@ import java.text.MessageFormat;
 
 public class Guest implements MessageSink, MessageSource {
     private final int LOGINING = 0; //登入狀態, 登入前.
-    private final int CHATTING = 1; //聊天狀態, 登入成功後.
+    private final int SEAT = 1; //聊天狀態, 登入成功後.
+    private final int CHATTING = 2; //聊天狀態, 登入成功後.
+
+
 
     private String id = "";
+    private int money= 0;
+    private String seat= null;
+    private String eat= null;
+
     private SceneChat scene = null;
     private int state = LOGINING;
 
@@ -43,15 +50,34 @@ public class Guest implements MessageSink, MessageSource {
 
                 break;
 
+            case SEAT:
+                String str=this.scene.readMessage();
+                int value = Integer.valueOf(str);
+                if (value>=1 &&value<=10) {
+                    this.seat = str;
+
+                    message = new LoginMessage(
+                            this.id, this.money, this.seat, this.eat
+                    );
+
+                    this.state = CHATTING;
+                    break;
+                }
+                message = new ChatMessage(
+                        "店小二",
+                        "沒有這個桌號哦~"
+                );
+                break;
+
             case LOGINING:
                 this.id = this.scene.readMessage();
+                this.money=1000;
 
                 message = new LoginMessage(
-                    this.id,
-                    ""
+                    this.id, this.money, this.seat, this.eat
                 );
 
-                this.state = CHATTING;
+                this.state = SEAT;
 
                 break;
 
@@ -67,7 +93,7 @@ public class Guest implements MessageSink, MessageSource {
         switch (message.getType()) {
             case Message.CHAT:
                 String chat = MessageFormat.format( //將取得的訊息轉為字串.
-                    "{0} 說：{1}",
+                    "{0}： {1}",
                     message.getSource(),    //取得誰說的.
                     ((ChatMessage) message).MESSAGE //取得訊息內容.
                 );
