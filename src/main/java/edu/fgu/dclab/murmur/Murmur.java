@@ -14,7 +14,7 @@ public class Murmur extends Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
 
-        stage.setTitle("MurMur 聊天室");
+        stage.setTitle("有間茶樓");
 
         sceneChat = new SceneChat();
         sceneConnect = new SceneConnect(this);
